@@ -4,6 +4,10 @@ import os
 # get URL
 yt = pytube.YouTube(str(input('Paste desired yt video =>'))) 
 
+# I - to bypass auth to restricted videos:
+#   1 - in C:\Python310\Lib\site-packages\pytube\__main__.py 
+#   2 - at def bypass_age_gate change InnerTube => InnerTube(client='ANDROID',...)
+
 #retrieve audio
 audio = yt.streams.filter(only_audio=True).first()
 
