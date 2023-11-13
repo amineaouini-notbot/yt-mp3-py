@@ -1,11 +1,11 @@
-import pytube 
+import pytube  
 import os
 
 # get URL
 yt = pytube.YouTube(str(input('Paste desired yt video =>'))) 
 
 # I - to bypass auth to restricted videos:
-#   1 - in C:\Python310\Lib\site-packages\pytube\__main__.py 
+#   1 - in Lib\site-packages\pytube\__main__.py 
 #   2 - at def bypass_age_gate change InnerTube:
 #       => InnerTube(client='ANDROID',[don't change the other arguments])
 
