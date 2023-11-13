@@ -1,5 +1,7 @@
 import pytube  
 import os
+import ssl
+ssl._create_default_https_context = ssl._create_stdlib_context
 
 # get URL
 yt = pytube.YouTube(str(input('Paste desired yt video =>'))) 
