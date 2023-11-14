@@ -5,7 +5,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 import pytube
 import ssl
 ssl._create_default_https_context = ssl._create_stdlib_context
-url = 'https://www.youtube.com/watch?v=QH3Fx41Jpl4&list=RDQH3Fx41Jpl4&start_radio=1'
+url = str(input('Insert mix link => '))
 
 driver = webdriver.Chrome()
 driver.get(url)
