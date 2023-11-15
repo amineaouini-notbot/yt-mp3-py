@@ -5,17 +5,21 @@ from selenium.webdriver.support.wait import WebDriverWait
 import pytube
 import ssl
 ssl._create_default_https_context = ssl._create_stdlib_context
+
+# get url
 url = str(input('Insert mix link => '))
 
+# setup selenium driver
 driver = webdriver.Chrome()
 driver.get(url)
 
-# get
+# retreive links from driver
 elements = driver.find_elements(By.CSS_SELECTOR, "a.yt-simple-endpoint.style-scope.ytd-playlist-panel-video-renderer")
-print(elements)
+
+
 for elemnt in elements:
-    print(elemnt.get_attribute('href'))
-    ytURL = elemnt.get_attribute('href')
+    # setup yt url for pytube
+    ytURL = elemnt.get_attribute('href') 
     yt = pytube.YouTube(ytURL) 
 
     #retrieve audio
